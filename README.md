@@ -1,4 +1,4 @@
 learn_python
 ============
 
-learn_python
+Изучаю Python

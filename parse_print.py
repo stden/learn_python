@@ -30,3 +30,26 @@ try:
     res = ET.fromstring("This is test string")
 except ET.ParseError:
     print "Это не XML!"
+
+
+class Result:
+    id = None
+    code = None
+    comment = None
+
+    def __init__(self, xml):
+        """ Разбор XML """
+        for child in ET.fromstring(xml):
+            setattr(self, child.tag, child.text)
+
+
+xml = """<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <id>0</id>
+  <code>NO</code>
+  <comment>-3 NO_DOG_NUMBER</comment>
+</result>"""
+result = Result(xml)
+print result.id
+print result.code
+print result.comment

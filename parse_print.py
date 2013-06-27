@@ -24,3 +24,9 @@ for bar in foo:
     for typeElement in bar:
         print typeElement.tag  # type
         print typeElement.attrib['foobar']  # 1 2
+
+# Проверка поведения ElementTree, когда в строке не XML
+try:
+    res = ET.fromstring("This is test string")
+except ET.ParseError:
+    print "Это не XML!"

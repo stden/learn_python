@@ -33,9 +33,7 @@ except ET.ParseError:
 
 
 class Result:
-    id = None
-    code = None
-    comment = None
+    id, code, comment = None, None, None
 
     def __init__(self, xml):
         """ Разбор XML """
